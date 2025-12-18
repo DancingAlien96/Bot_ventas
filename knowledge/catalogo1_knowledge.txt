@@ -1,0 +1,207 @@
+# Conocimiento Extraído de catalogo1
+
+Fecha de procesamiento: 2025-12-08T15:56:23.121Z
+
+---
+
+Para organizar la información de manera estructurada, he agrupado los productos por series y modelos, incluyendo sus características y especificaciones técnicas. Aquí está la base de conocimiento estructurada:
+
+---
+
+### Bombas Periféricas
+
+#### Serie APm
+- **APm37L**
+  - Potencia: 0.5HP
+  - Código: 10287
+  - Altura Máxima: 40 metros (131 pies)
+  - Caudal Máximo: 40 L/min (10.5 Gls/min)
+- **APm75L**
+  - Potencia: 1.0HP
+  - Código: 10289
+  - Altura Máxima: 70 metros (230 pies)
+  - Caudal Máximo: 50 L/min (13.2 Gls/min)
+
+### Bombas Centrífugas
+
+#### Serie ACm
+- **ACm37L**
+  - Potencia: 0.5HP
+  - Código: 10767
+  - Altura Máxima: 23 metros (75 pies)
+  - Caudal Máximo: 90 L/min (24 Gls/min)
+- **ACm75L**
+  - Potencia: 1.0HP
+  - Código: 10290
+  - Altura Máxima: 36 metros (118 pies)
+  - Caudal Máximo: 100 L/min (26.4 Gls/min)
+
+#### Serie ACm de Gran Caudal
+- **ACm300C2**
+  - Potencia: 4.0HP
+  - Código: 10291
+  - Altura Máxima: 30 metros (98.5 pies)
+  - Caudal Máximo: 800 L/min (212 Gls/min)
+- **ACm400C2**
+  - Potencia: 5.0HP
+  - Código: 10292
+  - Altura Máxima: 39 metros (128 pies)
+  - Caudal Máximo: 900 L/min (238 Gls/min)
+
+### Bombas Tipo Jet
+
+#### Serie AJm
+- **AJm45L**
+  - Potencia: 0.6HP
+  - Código: 10881
+  - Altura Máxima: 41 metros (135 pies)
+  - Caudal Máximo: 35 L/min (9.25 Gls/min)
+- **AJm75L**
+  - Potencia: 1.0HP
+  - Código: 10295
+  - Altura Máxima: 40 metros (131 pies)
+  - Caudal Máximo: 65 L/min (17.2 Gls/min)
+- **AJm150**
+  - Potencia: 2.0HP
+  - Código: 10182
+  - Altura Máxima: 60 metros (197 pies)
+  - Caudal Máximo: 100 L/min (26.4 Gls/min)
+
+#### Serie AJmS (Acero Inoxidable)
+- **AJm45SL**
+  - Potencia: 0.6HP
+  - Código: 10441
+  - Altura Máxima: 38 metros (125 pies)
+  - Caudal Máximo: 40 L/min (10.6 Gls/min)
+- **AJm75SL**
+  - Potencia: 1.0HP
+  - Código: 10296
+  - Altura Máxima: 47 metros (155 pies)
+  - Caudal Máximo: 55 L/min (14.5 Gls/min)
+- **AJm90S**
+  - Potencia: 1.2HP
+  - Código: 10607
+  - Altura Máxima: 48 metros (157.5 pies)
+  - Caudal Máximo: 60 L/min (15.9 Gls/min)
+
+### Bombas Centrífugas Acero Inoxidable
+
+#### Serie AMSm
+- **AMSm70/0.75**
+  - Potencia: 1HP
+  - Código: 10294
+  - Voltaje: 110/220V
+  - Altura Máxima: 32 metros (105 pies)
+  - Caudal Máximo: 100 L/min (26.5 Gls/min)
+- **AMSm210/1.5**
+  - Potencia: 2HP
+  - Código: 10574
+  - Voltaje: 220/230V
+  - Altura Máxima: 27 metros (89 pies)
+  - Caudal Máximo: 300 L/min (79.3 Gls/min)
+- **AMSm370/2.2**
+  - Potencia: 3HP
+  - Código: 10614
+  - Voltaje: 220/230V
+  - Altura Máxima: 23 metros (75.5 pies)
+  - Caudal Máximo: 525 L/min (139 Gls/min)
+
+### Bombas Horizontales Multietapas
+
+#### Serie EDH
+- **EDHm4-50**
+  - Potencia: 2HP
+  - Código: 11040
+  - Voltaje: 220V, 60HZ
+  - Altura Máxima: 70 metros (230 pies)
+  - Caudal Máximo: 135 L/min (35.6 Gls/min)
+- **EDHm4-60**
+  - Potencia: 3HP
+  - Código: 11041
+  - Voltaje: 220V, 60HZ
+  - Altura Máxima: 85 metros (279 pies)
+  - Caudal Máximo: 135 L/min (35.6 Gls/min)
+
+#### Serie XCm
+- **5XCm100S**
+  - Potencia: 1.2HP
+  - Código: 10982
+  - Voltaje: 220V, 60HZ
+  - Altura Máxima: 55 metros (180 pies)
+  - Caudal Máximo: 90 L/min (24 Gls/min)
+
+### Bombas Sumergibles
+
+#### Serie SPmA
+- **SPm37A**
+  - Potencia: 0.5HP
+  - Código: 10298
+  - Altura Máxima: 41 metros
+  - Caudal Máximo: 33 L/min
+
+#### Serie QDX
+- **QDX1.5-32-0.75A**
+  - Potencia: 1HP
+  - Código: 11038
+  - Altura Máxima: 32.5 metros
+  - Caudal Máximo: 175 L/min
+
+#### Serie LSWm100A
+- **LSWm100A**
+  - Potencia: 1.0HP
+  - Código: 11269
+  - Altura Máxima: 17 metros (56 pies)
+  - Caudal Máximo: 317 L/min (84 Gls/min)
+
+### Bombas para Piscinas y Jacuzzis
+
+#### Serie XKP
+- **XKP856**
+  - Potencia: 1.2HP
+  - Código: 11212
+  - Succión Máxima: 3.5 metros
+  - Circulación Máxima: 20 m³/hora
+
+#### Serie LSPA
+- **LSPA600**
+  - Potencia: 0.8HP
+  - Código: 11272
+  - Caudal Máximo: 16 m³/hora
+  - Altura Máxima: 10 metros
+
+### Bombas con Motor de Gasolina
+
+#### Serie LGP
+- **LGP10**
+  - Potencia: 1.6HP
+  - Código: 10184
+  - Altura Máxima: 35 metros (115 pies)
+  - Caudal Máximo: 100 L/min (26.4 Gls/min)
+
+### Generadores
+
+#### Serie PB
+- **PB3300A**
+  - Potencia Nominal: 3.0 KW
+  - Potencia Máxima: 3.3 KW
+  - Código: 10783
+
+### Otros Productos
+
+#### Serie LRP Presurizadores
+- **LRP15-90A/160**
+  - Código: 10462
+  - Caudal Máximo: 25 L/min
+  - Elevación Máxima: 9 metros
+
+#### Serie Tanques de Presión
+- **Horizontales**
+  - 20 litros: Código 10903
+  - 24 litros: Código 10188
+
+---
+
+Esta estructura permite identificar rápidamente los productos, sus modelos, y las especificaciones técnicas relevantes.
+
+---
+
