@@ -1,0 +1,51 @@
+]633;E;{   echo "SERVER PERFORMANCE REPORT"\x3b   echo "Generated: $(date '+%Y-%m-%d %H:%M:%S %Z')"\x3b   echo "Host: $(hostname)"\x3b   echo\x3b   echo "=== UPTIME & LOAD ==="\x3b   uptime\x3b   echo\x3b   echo "=== CPU (top snapshot) ==="\x3b   top -bn1 | head -5\x3b   echo\x3b   echo "=== MEMORY ==="\x3b   free -h\x3b   echo\x3b   echo "=== DISK ROOT ==="\x3b   df -h /\x3b   echo\x3b   echo "=== DOCKER SYSTEM DF ==="\x3b   docker system df\x3b   echo\x3b   echo "=== RUNNING CONTAINERS ==="\x3b   docker ps --format 'table {{.Names}}\\t{{.Status}}\\t{{.Ports}}'\x3b   echo\x3b   echo "=== CONTAINER STATS (NO-STREAM) ==="\x3b   docker stats --no-stream --format 'table {{.Name}}\\t{{.CPUPerc}}\\t{{.MemUsage}}\\t{{.MemPerc}}\\t{{.NetIO}}\\t{{.PIDs}}'\x3b } > "$REPORT"\x3b;b9722657-ba72-46a2-bf07-a2dfcc1500ad]633;CSERVER PERFORMANCE REPORT
+Generated: 2026-03-14 02:55:20 CET
+Host: vmi2917095
+
+=== UPTIME & LOAD ===
+ 02:55:20 up 115 days,  8:47,  2 users,  load average: 0.16, 0.34, 0.42
+
+=== CPU (top snapshot) ===
+top - 02:55:20 up 115 days,  8:47,  2 users,  load average: 0.16, 0.34, 0.42
+Tasks: 172 total,   1 running, 171 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  4.5 us,  0.0 sy,  0.0 ni, 95.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7941.2 total,   2412.9 free,   3286.7 used,   2735.2 buff/cache     
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   4654.5 avail Mem 
+
+=== MEMORY ===
+               total        used        free      shared  buff/cache   available
+Mem:           7.8Gi       3.2Gi       2.4Gi       1.7Mi       2.7Gi       4.5Gi
+Swap:             0B          0B          0B
+
+=== DISK ROOT ===
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       145G   13G  132G   9% /
+
+=== DOCKER SYSTEM DF ===
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          8         8         2.977GB   2.977GB (100%)
+Containers      8         8         20.34MB   0B (0%)
+Local Volumes   7         3         212.2MB   0B (0%)
+Build Cache     0         0         0B        0B
+
+=== RUNNING CONTAINERS ===
+NAMES                  STATUS                  PORTS
+aquaequipos-frontend   Up 2 days (healthy)     3000/tcp
+aquaequipos-bot        Up 2 days               0.0.0.0:3000->3000/tcp
+aquaequipos-backend    Up 8 days (healthy)     4000/tcp
+piums-container        Up 8 weeks              0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
+fidelizacion-nginx     Up 4 days               0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp
+fidelizacion-api       Up 4 days               3000/tcp
+fidelizacion-mysql     Up 2 months (healthy)   0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp
+fidelizacion-certbot   Up 2 months             80/tcp, 443/tcp
+
+=== CONTAINER STATS (NO-STREAM) ===
+NAME                   CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           PIDS
+aquaequipos-frontend   0.00%     71.49MiB / 7.755GiB   0.90%     2.27MB / 6.85MB   11
+aquaequipos-bot        0.00%     46.59MiB / 7.755GiB   0.59%     5.12MB / 3.39MB   11
+aquaequipos-backend    0.00%     51.71MiB / 7.755GiB   0.65%     11.9MB / 9.31MB   22
+piums-container        0.00%     5.703MiB / 7.755GiB   0.07%     17.5MB / 42.2MB   5
+fidelizacion-nginx     0.00%     9.406MiB / 7.755GiB   0.12%     98.6MB / 200MB    7
+fidelizacion-api       0.00%     63.91MiB / 7.755GiB   0.80%     2.06MB / 1.1MB    22
+fidelizacion-mysql     1.23%     970.9MiB / 7.755GiB   12.23%    305MB / 581MB     46
+fidelizacion-certbot   0.00%     2.797MiB / 7.755GiB   0.04%     3.68MB / 1.49MB   2

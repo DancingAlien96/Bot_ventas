@@ -1,207 +1,938 @@
 # Conocimiento Extraído de catalogo1
 
-Fecha de procesamiento: 2025-12-08T15:56:23.121Z
+Fecha de procesamiento: 2026-01-16T18:36:02.207Z
 
 ---
 
-Para organizar la información de manera estructurada, he agrupado los productos por series y modelos, incluyendo sus características y especificaciones técnicas. Aquí está la base de conocimiento estructurada:
+
+
+--- Chunk 1 ---
+
+Aquí tienes la información estructurada y organizada del fragmento proporcionado:
+
+### Catálogo de Productos de Tratamiento de Agua
+
+#### Características Generales
+- **Sistema antibloqueo**
+- **Tratamiento especial anti-corrosión**
+- **Protección Anticalentamiento**
+- **Eje de acero inoxidable**
+- **Aislamiento clase “F”**
 
 ---
 
-### Bombas Periféricas
+### Productos y Especificaciones
 
-#### Serie APm
-- **APm37L**
-  - Potencia: 0.5HP
-  - Código: 10287
-  - Altura Máxima: 40 metros (131 pies)
-  - Caudal Máximo: 40 L/min (10.5 Gls/min)
-- **APm75L**
-  - Potencia: 1.0HP
-  - Código: 10289
-  - Altura Máxima: 70 metros (230 pies)
-  - Caudal Máximo: 50 L/min (13.2 Gls/min)
+#### Serie APm - Bomba Periférica 110V
+- **Uso:** Residencial
+- **Características:**
+  - Impulsor de bronce
+  - Máxima succión: 8 metros
+  - Entrada y salida de 1”
+- **Modelos:**
+  - **APm37L**
+    - Potencia: 0.5HP
+    - Código: 10287
+    - Altura Máxima: 40 metros (131 pies)
+    - Caudal Máximo: 40 L/min (10.5 Gls/min)
+  - **APm75L**
+    - Potencia: 1.0HP
+    - Código: 10289
+    - Altura Máxima: 70 metros (230 pies)
+    - Caudal Máximo: 50 L/min (13.2 Gls/min)
 
-### Bombas Centrífugas
+#### Serie ACm - Bomba Centrífuga 110V
+- **Uso:** Residencial o Comercial
+- **Características:**
+  - Impulsor de acero inoxidable
+  - Máxima succión: 8 metros
+  - Entrada y salida de 1”
+- **Modelos:**
+  - **ACm37L**
+    - Potencia: 0.5HP
+    - Código: 10767
+    - Altura Máxima: 23 metros (75 pies)
+    - Caudal Máximo: 90 L/min (24 Gls/min)
+  - **ACm75L**
+    - Potencia: 1.0HP
+    - Código: 10290
+    - Altura Máxima: 36 metros (118 pies)
+    - Caudal Máximo: 100 L/min (26.4 Gls/min)
 
-#### Serie ACm
-- **ACm37L**
-  - Potencia: 0.5HP
-  - Código: 10767
-  - Altura Máxima: 23 metros (75 pies)
-  - Caudal Máximo: 90 L/min (24 Gls/min)
-- **ACm75L**
-  - Potencia: 1.0HP
-  - Código: 10290
-  - Altura Máxima: 36 metros (118 pies)
-  - Caudal Máximo: 100 L/min (26.4 Gls/min)
+#### Serie AJm - Bomba Tipo Jet
+- **Uso:** Residencial o Comercial
+- **Características:**
+  - Combinación de caudal y presión
+  - Máxima succión: 9 metros
+  - Entrada y salida de 1” (AJm150: entrada de 1 ¼” y salida de 1”)
+- **Modelos:**
+  - **AJm45L**
+    - Potencia: 0.6HP
+    - Código: 10881
+    - Altura Máxima: 41 metros (135 pies)
+    - Caudal Máximo: 35 L/min (9.25 Gls/min)
+  - **AJm75L**
+    - Potencia: 1.0HP
+    - Código: 10295
+    - Altura Máxima: 40 metros (131 pies)
+    - Caudal Máximo: 65 L/min (17.2 Gls/min)
+  - **AJm150**
+    - Potencia: 2.0HP
+    - Código: 10182
+    - Altura Máxima: 60 metros (197 pies)
+    - Caudal Máximo: 100 L/min (26.4 Gls/min)
 
-#### Serie ACm de Gran Caudal
-- **ACm300C2**
-  - Potencia: 4.0HP
-  - Código: 10291
-  - Altura Máxima: 30 metros (98.5 pies)
-  - Caudal Máximo: 800 L/min (212 Gls/min)
-- **ACm400C2**
-  - Potencia: 5.0HP
-  - Código: 10292
-  - Altura Máxima: 39 metros (128 pies)
-  - Caudal Máximo: 900 L/min (238 Gls/min)
+#### Serie AJmS - Bomba Jet Acero Inoxidable
+- **Uso:** Residencial y Comercial
+- **Características:**
+  - Cuerpo y impulsor de acero inoxidable AISI 304
+  - Máxima succión: 9 metros
+  - Entrada y salida de 1”
+- **Modelos:**
+  - **AJm45SL**
+    - Potencia: 0.6HP
+    - Código: 10441
+    - Altura Máxima: 38 metros (125 pies)
+    - Caudal Máximo: 40 L/min (10.6 Gls/min)
+  - **AJm75SL**
+    - Potencia: 1.0HP
+    - Código: 10296
+    - Altura Máxima: 47 metros (155 pies)
+    - Caudal Máximo: 55 L/min (14.5 Gls/min)
+  - **AJm90S**
+    - Potencia: 1.2HP
+    - Código: 10607
+    - Altura Máxima: 48 metros (157.5 pies)
+    - Caudal Máximo: 60 L/min (15.9 Gls/min)
 
-### Bombas Tipo Jet
+#### Serie AMSm - Bomba Centrífuga Acero Inoxidable
+- **Características:**
+  - Cuerpo, impulsor y eje de acero inoxidable AISI 304
+  - Temperatura de líquidos: Hasta +85 °C
+  - Entrada 1 ¼” y salida de 1”
+- **Modelos:**
+  - **AMSm70/0.75**
+    - Potencia: 1HP
+    - Código: 10294
+    - Voltaje: 110/220V
+    - Altura Máxima: 32 metros (105 pies)
+    - Caudal Máximo: 100 L/min (26.5 Gls/min)
+  - **AMSm210/1.5**
+    - Potencia: 2HP
+    - Código: 10574
+    - Voltaje: 220/230V
+    - Altura Máxima: 27 metros (89 pies)
+    - Caudal Máximo: 300 L/min (79.3 Gls/min)
+  - **AMSm370/2.2**
+    - Potencia: 3HP
+    - Código: 10614
+    - Voltaje: 220/230V
+    - Altura Máxima: 23 metros (75.5 pies)
+    - Caudal Máximo: 525 L/min (139 Gls/min)
 
-#### Serie AJm
-- **AJm45L**
-  - Potencia: 0.6HP
-  - Código: 10881
-  - Altura Máxima: 41 metros (135 pies)
-  - Caudal Máximo: 35 L/min (9.25 Gls/min)
-- **AJm75L**
-  - Potencia: 1.0HP
-  - Código: 10295
-  - Altura Máxima: 40 metros (131 pies)
-  - Caudal Máximo: 65 L/min (17.2 Gls/min)
-- **AJm150**
-  - Potencia: 2.0HP
-  - Código: 10182
-  - Altura Máxima: 60 metros (197 pies)
-  - Caudal Máximo: 100 L/min (26.4 Gls/min)
+#### Serie EDH - Bomba Horizontal Multietapas
+- **Características:**
+  - Cuerpo, impulsor y eje de acero inoxidable AISI 304
+  - Temperatura de líquidos: Hasta +85 °C
+  - Entrada 1 ¼” y salida de 1 ¼”
+- **Modelos:**
+  - **EDHm4-50**
+    - Potencia: 2HP
+    - Código: 11040
+    - Voltaje: 220V, 60HZ
+    - Altura Máxima: 70 metros (230 pies)
+    - Caudal Máximo: 135 L/min (35.6 Gls/min)
+  - **EDHm4-60**
+    - Potencia: 3HP
+    - Código: 11041
+    - Voltaje: 220V, 60HZ
+    - Altura Máxima: 85 metros (279 pies)
+    - Caudal Máximo: 135 L/min (35.6 Gls/min)
 
-#### Serie AJmS (Acero Inoxidable)
-- **AJm45SL**
-  - Potencia: 0.6HP
-  - Código: 10441
-  - Altura Máxima: 38 metros (125 pies)
-  - Caudal Máximo: 40 L/min (10.6 Gls/min)
-- **AJm75SL**
-  - Potencia: 1.0HP
-  - Código: 10296
-  - Altura Máxima: 47 metros (155 pies)
-  - Caudal Máximo: 55 L/min (14.5 Gls/min)
-- **AJm90S**
-  - Potencia: 1.2HP
-  - Código: 10607
-  - Altura Máxima: 48 metros (157.5 pies)
-  - Caudal Máximo: 60 L/min (15.9 Gls/min)
+#### Serie ABK - Acero Inoxidable de Impulsor Semi-abierto
+- **Características:**
+  - Estructura ligera, alto rendimiento, alta eficiencia
+  - Temperatura de líquidos: Hasta +80 °C
+  - Sólidos Máx: 18mm
+  - Entrada y salida: 1HP (1 ½”), 2HP (2”), 3HP (2 ½” y 2”)
+- **Modelos:**
+  - **ABK100D**
+    - Potencia: 1HP
+    - Código: 10779
+    - Voltaje: 110/220V
+  - **ABK200D**
+    - Potencia: 2HP
+    - Código: 10780
+    - Voltaje: 110/220V
+  - **ABK300D**
+    - Potencia: 3HP
+    - Código: 10886
+    - Voltaje: 220V
 
-### Bombas Centrífugas Acero Inoxidable
+#### Serie XCm - Bomba Horizontal Multietapas
+- **Características:**
+  - Cuerpo de acero inoxidable AISI 304
+  - Impulsor de PPO
+  - Temperatura de líquidos: Hasta +60 °C
+  - Entrada y salida de 1”
+- **Modelos:**
+  - **5XCm100S**
+    - Potencia: 1.2HP
+    - Código: 10982
+    - Voltaje: 220V/60HZ
+    - Altura Máxima: 55 metros (180 pies)
+    - Caudal Máximo: 90 L/min (24 Gls/min)
 
-#### Serie AMSm
-- **AMSm70/0.75**
-  - Potencia: 1HP
-  - Código: 10294
-  - Voltaje: 110/220V
-  - Altura Máxima: 32 metros (105 pies)
-  - Caudal Máximo: 100 L/min (26.5 Gls/min)
-- **AMSm210/1.5**
-  - Potencia: 2HP
-  - Código: 10574
-  - Voltaje: 220/230V
-  - Altura Máxima: 27 metros (89 pies)
-  - Caudal Máximo: 300 L/min (79.3 Gls/min)
-- **AMSm370/2.2**
-  - Potencia: 3HP
-  - Código: 10614
-  - Voltaje: 220/230V
-  - Altura Máxima: 23 metros (75.5 pies)
-  - Caudal Máximo: 525 L/min (139 Gls/min)
+#### Serie ECH - Bomba Horizontal Multietapas
+- **Características:**
+  - Cuerpo, impulsor y eje de acero inoxidable AISI 304
+  - Temperatura de líquidos: Hasta +85 °C
+  - Modelos ECHm2: Entrada y salida de 1”
+  - Modelos ECHm10: Entrada 1 ½” y salida de 1 ¼”
+- **Modelos:**
+  - **ECHm2-20**
+    - Potencia: 0.55HP
+    - Código: 110422
+    - Voltaje: 110V/220V, 60HZ
+    - Altura Máxima: 27 metros (89 pies)
+    - Caudal Máximo: 85 L/min (22.5 Gls/min)
+  - **ECHm2-30**
+    - Potencia: 0.75HP
+    - Código: 11043
+    - Voltaje: 110V/220V, 60HZ
+    - Altura Máxima: 39 metros (128 pies)
+    - Caudal Máximo: 85 L/min (22.5 Gls/min)
 
-### Bombas Horizontales Multietapas
+#### Serie LMCm - Bomba Centrífuga
+- **Características:**
+  - Impulsor de Acero PPO
+  - Máxima succión: 8 metros
+  - Entrada de 1 ½” y salida de 1 ¼”
+- **Modelos:**
+  - **LMCm-1.5HP**
+    - Potencia: 1.5HP
+    - Código: 10981
+    - Voltaje: 220V/60HZ
+    - Altura Máxima: 33 metros (108 pies)
+    - Caudal Máximo: 250 L/min (66 Gls/min)
 
-#### Serie EDH
-- **EDHm4-50**
-  - Potencia: 2HP
-  - Código: 11040
-  - Voltaje: 220V, 60HZ
-  - Altura Máxima: 70 metros (230 pies)
-  - Caudal Máximo: 135 L/min (35.6 Gls/min)
-- **EDHm4-60**
-  - Potencia: 3HP
-  - Código: 11041
-  - Voltaje: 220V, 60HZ
-  - Altura Máxima: 85 metros (279 pies)
-  - Caudal Máximo: 135 L/min (35.6 Gls/min)
+#### Serie XKP - Bomba para Piscina
+- **Características:**
+  - Para circulación en el proceso de filtrado
+  - Voltaje: 110V o 220V
+- **Modelos:**
+  - **XKP856**
+    - Potencia: 1.2HP
+    - Código: 11212
+    - Succión Máxima: 3.5 metros
+    - Circulación Máxima: 20 m³/hora
+  - **XKP1606**
+    - Potencia: 2.0HP
+    - Código: 11154
+    - Succión Máxima: 3.5 metros
+    - Circulación Máxima: 27 m³/hora
+  - **XKP2206**
+    - Potencia: 3.0HP
+    - Código: 11155
+    - Succión Máxima: 3.5 metros
+    - Circulación Máxima: 30 m³/hora
 
-#### Serie XCm
-- **5XCm100S**
-  - Potencia: 1.2HP
-  - Código: 10982
-  - Voltaje: 220V, 60HZ
-  - Altura Máxima: 55 metros (180 pies)
-  - Caudal Máximo: 90 L/min (24 Gls/min)
+#### Serie LSPA - Bomba para Jacuzzi
+- **Características:**
+  - Voltaje: 110V y 220V
+- **Modelos:**
+  - **LSPA600**
+    - Potencia: 0.8HP
+    - Código: 11272
+    - Caudal Máximo: 16 m³/hora
+    - Altura Máxima: 10 metros
+  - **LSPA900**
+    - Potencia: 1.2HP
+    - Código: 11273
+    - Caudal Máximo: 16 m³/hora
+    - Altura Máxima: 12 metros
+  - **LSPA1100**
+    - Potencia: 1.5HP
+    - Código: 11274
+    - Caudal Máximo: 17 m³/hora
+    - Altura Máxima: 12.5 metros
 
-### Bombas Sumergibles
+Esta estructura proporciona una visión clara y organizada de los productos y sus especificaciones, facilitando la consulta y comparación de las diferentes opciones disponibles en el catálogo.
 
-#### Serie SPmA
-- **SPm37A**
-  - Potencia: 0.5HP
-  - Código: 10298
-  - Altura Máxima: 41 metros
-  - Caudal Máximo: 33 L/min
+--- Chunk 2 ---
 
-#### Serie QDX
-- **QDX1.5-32-0.75A**
-  - Potencia: 1HP
-  - Código: 11038
-  - Altura Máxima: 32.5 metros
-  - Caudal Máximo: 175 L/min
+Para estructurar la información proporcionada del catálogo de productos de tratamiento de agua, he organizado los productos en categorías basadas en el tipo de bomba y sus características. Aquí está la información estructurada:
 
-#### Serie LSWm100A
-- **LSWm100A**
-  - Potencia: 1.0HP
-  - Código: 11269
-  - Altura Máxima: 17 metros (56 pies)
-  - Caudal Máximo: 317 L/min (84 Gls/min)
+### Bombas Tipo JET
+- **Uso:** Residencial o comercial
+- **Características Comunes:**
+  - Incluyen KIT inyector
+  - Máxima succión: 30 metros
+  - Impulsor de acero inoxidable
+  - Eje de acero inoxidable
+  - Aislamiento clase “F”
+  - Protección anticalentamiento
+  - Tratamiento especial anti-corrosión
+  - Entrada 1 ¼“ y salida de 1”
 
-### Bombas para Piscinas y Jacuzzis
+#### Modelos:
+1. **AJDm75/4H**
+   - Potencia: 1.0 HP
+   - Código: 10195
+   - Succión: 25 metros
+   - Caudal: 28 L/min
 
-#### Serie XKP
-- **XKP856**
-  - Potencia: 1.2HP
-  - Código: 11212
-  - Succión Máxima: 3.5 metros
-  - Circulación Máxima: 20 m³/hora
+2. **AJDm110/4H**
+   - Potencia: 1.5 HP
+   - Código: 10606
+   - Succión: 25 metros
+   - Caudal: 51 L/min
 
-#### Serie LSPA
-- **LSPA600**
-  - Potencia: 0.8HP
-  - Código: 11272
-  - Caudal Máximo: 16 m³/hora
-  - Altura Máxima: 10 metros
+### Bombas Centrífugas Serie ACm
+- **Uso:** Comercial o industrial
+- **Características Comunes:**
+  - Tratamiento especial anti-corrosión
+  - Impulsor de bronce
+  - Eje de acero inoxidable
+  - Aislamiento clase “F”
+  - Protección anticalentamiento
+  - Máxima succión: 8 metros
+  - Entrada de 2” y salida de 2”
 
-### Bombas con Motor de Gasolina
+#### Modelos:
+1. **ACm300C2**
+   - Potencia: 4.0 HP
+   - Voltaje: 220V
+   - Código: 10291
+   - Altura Máxima: 30 metros
+   - Caudal Máximo: 800 L/min
 
-#### Serie LGP
-- **LGP10**
-  - Potencia: 1.6HP
-  - Código: 10184
-  - Altura Máxima: 35 metros (115 pies)
-  - Caudal Máximo: 100 L/min (26.4 Gls/min)
+2. **ACm400C2**
+   - Potencia: 5.0 HP
+   - Voltaje: 220V
+   - Código: 10292
+   - Altura Máxima: 39 metros
+   - Caudal Máximo: 900 L/min
 
-### Generadores
+### Bombas Centrífugas Multietapas Serie 2ACm
+- **Uso:** Comercial o industrial
+- **Características Comunes:**
+  - Doble impulsor
+  - Tratamiento especial anti-corrosión
+  - Impulsor de bronce
+  - Eje de acero inoxidable
+  - Aislamiento clase “F”
+  - Protección anticalentamiento
+  - Máxima succión: 8 metros
+  - Entrada de 2” y salida de 2”
 
-#### Serie PB
-- **PB3300A**
-  - Potencia Nominal: 3.0 KW
-  - Potencia Máxima: 3.3 KW
-  - Código: 10783
+#### Modelos:
+1. **2ACm150**
+   - Potencia: 2.0 HP
+   - Voltaje: 110/220V
+   - Código: 10769
+   - Altura Máxima: 58 metros
+   - Caudal Máximo: 160 L/min
 
-### Otros Productos
+2. **2ACm150H**
+   - Potencia: 2.0 HP
+   - Voltaje: 110/220V
+   - Código: 10962
+   - Altura Máxima: 63.5 metros
+   - Caudal Máximo: 120 L/min
 
-#### Serie LRP Presurizadores
-- **LRP15-90A/160**
-  - Código: 10462
-  - Caudal Máximo: 25 L/min
-  - Elevación Máxima: 9 metros
+3. **2ACm300H**
+   - Potencia: 4.0 HP
+   - Voltaje: 220V
+   - Código: 10907
+   - Altura Máxima: 65 metros
+   - Caudal Máximo: 260 L/min
 
-#### Serie Tanques de Presión
-- **Horizontales**
+### Bombas Centrífugas Serie XHm
+- **Uso:** Comercial, industrial o agrícola
+- **Características Comunes:**
+  - Selector de voltaje
+  - Tratamiento especial anti-corrosión
+  - Impulsor de acero inoxidable
+  - Eje de acero inoxidable
+  - Aislamiento clase “F”
+  - Protección anticalentamiento
+  - Máxima succión: 8 metros
+
+#### Modelos:
+1. **XHm/6B**
+   - Potencia: 2.0 HP
+   - Voltaje: 110/220V
+   - Código: 10979
+   - Entrada de 3” y salida de 3”
+   - Altura Máxima: 14.7 metros
+   - Caudal Máximo: 1200 L/min
+
+2. **XHm/6A**
+   - Potencia: 3.0 HP
+   - Voltaje: 220V monofásica o 440V trifásica
+   - Código: 10980
+   - Entrada de 3” y salida de 3”
+   - Altura Máxima: 18.5 metros
+   - Caudal Máximo: 1300 L/min
+
+3. **XHm/7AR**
+   - Potencia: 5.5 HP
+   - Voltaje: 220V
+   - Código: 10446 (monofásica), 11153 (trifásica)
+   - Entrada de 4” y salida de 4”
+   - Altura Máxima: 18.8 metros
+   - Caudal Máximo: 2200 L/min
+
+### Sistemas Hidroneumáticos
+- **Uso:** Residencial, purificación de agua, fabricación de refrescos
+- **Características Comunes:**
+  - Funcionamiento automático
+  - Sistema antibloqueo
+  - Tratamiento especial anti-corrosión
+  - Eje de acero inoxidable
+  - Aislamiento clase “F”
+  - Máxima succión: 8 metros
+  - Entrada de 1” y salida de 1”
+
+#### Modelos:
+1. **XKJ-APm37L**
+   - Potencia: 0.5 HP
+   - Código: 10602
+   - Altura Máxima: 40 metros
+   - Caudal Máximo: 40 L/min
+
+2. **XKJ802IA**
+   - Potencia: 1.0 HP
+   - Código: 11265
+   - Tanque de 50 litros
+   - Altura Máxima: 39 metros
+   - Caudal Máximo: 60 L/min
+
+3. **XKJ-AJm30SLA**
+   - Potencia: 0.5 HP
+   - Código: 10994
+   - Tanque de 20 litros
+   - Altura Máxima: 30 metros
+   - Caudal Máximo: 40 L/min
+
+4. **XKJ-AJm75SL**
+   - Potencia: 1.0 HP
+   - Código: 10603
+   - Tanque de 20 litros
+   - Altura Máxima: 47 metros
+   - Caudal Máximo: 55 L/min
+
+### Bombas con Motor de Gasolina Serie LGP
+- **Características Comunes:**
+  - Motor de gasolina (regular)
+  - Tratamiento especial anti-corrosión
+  - Enfriado por aire
+  - Máxima succión: 8 metros
+  - Incluye acoples y válvula de pie
+
+#### Modelos:
+1. **LGP10**
+   - Potencia: 1.6 HP
+   - Código: 10184
+   - Altura Máxima: 35 metros
+   - Caudal Máximo: 100 L/min
+
+2. **LGP20-C**
+   - Potencia: 6.5 HP
+   - Código: 11013
+   - Altura Máxima: 32 metros
+   - Caudal Máximo: 500 L/min
+
+3. **LGP30-C**
+   - Potencia: 6.5 HP
+   - Código: 11014
+   - Altura Máxima: 32 metros
+   - Caudal Máximo: 1000 L/min
+
+4. **LGP20-2H**
+   - Potencia: 6.5 HP
+   - Código: 10185
+   - Altura Máxima: 80 metros
+   - Caudal Máximo: 350 L/min
+
+Esta estructura permite una fácil identificación y comparación de los productos, sus especificaciones y aplicaciones.
+
+--- Chunk 3 ---
+
+A continuación se presenta la información estructurada y organizada del fragmento proporcionado, agrupando los productos por serie y especificaciones:
+
+---
+
+### Serie LGP
+- **Producto:** Bomba con motor de gasolina para agua limpia y residuales
+  - **Modelo:** LGP30W
+  - **Código:** 10546
+  - **Altura Máxima:** 25 metros
+  - **Caudal Máximo:** 1,000 L/min
+  - **Características:**
+    - Motor de gasolina, cuatro tiempos
+    - Sensor de aceite
+    - Tratamiento especial anti-corrosión
+    - Bajo consumo de combustible
+    - Enfriado por aire
+    - Máxima succión: 5 metros
+    - Entrada y salida de 3”
+    - Succiona partículas de hasta 22mm
+    - Incluye acoples y válvula de pie
+
+---
+
+### Serie SPmA
+- **Producto:** Bomba periférica sumergible
+  - **Modelo:** SPm37A
+  - **Código:** 10298
+  - **Potencia:** 0.5HP
+  - **Altura Máxima:** 41 metros
+  - **Caudal Máximo:** 33 L/min
+  - **Características:**
+    - Construcción en acero inoxidable
+    - Flote incluido
+    - Tolerancia a contenido de arena hasta 0.1%
+    - Tratamiento especial anti-corrosión
+    - Impulsor de bronce
+    - Protección anticalentamiento
+    - Aislamiento clase “F”
+    - Salida de 1”
+
+---
+
+### Serie QDX
+- **Producto:** Bomba sumergible de caudal
+  - **Modelos:**
+    - QDX1.5-32-0.75A (Cuerpo de aluminio)
+      - **Código:** 11038
+    - QDX1.5-32-0.75A (Cuerpo de hierro)
+      - **Código:** 10773
+  - **Potencia:** 1HP
+  - **Altura Máxima:** 32.5 metros
+  - **Caudal Máximo:** 175 L/min
+  - **Características:**
+    - Impulsor de PPO
+    - Doble sello mecánico
+    - Protección contra descargas y calentamiento
+    - Aislamiento clase “F”
+    - Salida de 1”
+    - Flote incluido
+
+---
+
+### Serie LSWm
+- **Producto:** Bomba sumergible de drenaje
+  - **Modelos:**
+    - LSWm100A
+      - **Código:** 11269
+      - **Potencia:** 1.0HP
+      - **Altura Máxima:** 17 metros
+      - **Caudal Máximo:** 317 L/min
+    - LSWm200CA
+      - **Código:** 11270
+      - **Potencia:** 2.0HP
+      - **Altura Máxima:** 19.5 metros
+      - **Caudal Máximo:** 350 L/min
+  - **Características:**
+    - Para aguas residuales, agua limpia o sucia
+    - Eje de acero inoxidable
+    - Protección anticalentamiento
+    - Construcción sólida
+    - Salida de 2 pulgadas
+    - Flote incluido
+
+---
+
+### Serie XQS
+- **Producto:** Bomba sumergible
+  - **Modelo:** XQS14.5-42/3-1.5I
+  - **Código:** 11045
+  - **Potencia:** 2.0HP
+  - **Altura Máxima:** 42 metros
+  - **Caudal Máximo:** 240 L/min
+  - **Características:**
+    - Eje de acero inoxidable
+    - Protección anticalentamiento
+    - Construcción sólida
+    - Flote incluido
+    - Salida de 2”
+
+---
+
+### Serie XKS
+- **Producto:** Bomba sumergible
+  - **Modelos:**
+    - XKS-1100S 110V
+      - **Código:** 11134
+    - XKS-1100S 220V
+      - **Código:** 11187
+  - **Potencia:** 1.5HP
+  - **Altura Máxima:** 45 metros
+  - **Caudal Máximo:** 120 L/min
+  - **Características:**
+    - Cuerpo de acero inoxidable
+    - Multi-impulsores
+    - Máximo diámetro de partículas: 1mm
+    - Protección anticalentamiento
+    - Flote incluido
+    - Salida de 1”
+
+---
+
+### Serie WQ
+- **Producto:** Bomba sumergible de aguas residuales
+  - **Modelos:**
+    - 50WQD10-10-0.75
+      - **Código:** 10784
+      - **Potencia:** 1HP
+      - **Altura Máxima:** 13 metros
+      - **Caudal Máximo:** 28 m³/h
+    - 50WQD8-20-1.5
+      - **Código:** 10784
+      - **Potencia:** 2HP
+      - **Altura Máxima:** 22 metros
+      - **Caudal Máximo:** 25 m³/h
+  - **Características:**
+    - Salida de 1.5”
+
+---
+
+### Serie ASTEP
+- **Producto:** Bomba sumergible de aguas residuales
+  - **Modelo:** ASTEP
+  - **Código:** 11012
+  - **Potencia:** 1HP
+  - **Altura Máxima:** 30 metros
+  - **Caudal Máximo:** 80 g/m
+  - **Características:**
+    - Eje de acero inoxidable 416
+    - Motor diseño NEMA monofásico
+    - Protección de sobrecargas
+    - Voluta y carcasa del motor de hierro fundido ASTM a48 clase 30
+    - Impulsor de hierro fundido ASTM a48 clase 30
+    - Flote incluido
+    - Salida de 2”
+
+---
+
+### Serie 4XRm
+- **Producto:** Bomba sumergible para pozo
+  - **Modelos:**
+    - 4XRm3/5-0.37
+      - **Código:** 10547
+      - **Potencia:** 0.5HP
+      - **Altura Máxima:** 51 metros
+      - **Caudal Máximo:** 1110 Gls/h
+    - 4XRm3/9-0.75
+      - **Código:** 10549
+      - **Potencia:** 1.0HP
+      - **Altura Máxima:** 92 metros
+      - **Caudal Máximo:** 1110 Gls/h
+  - **Características:**
+    - Cuerpo y eje de acero inoxidable
+    - Impulsor POM
+    - Inmersión Máxima: 80 m
+    - Protección anticalentamiento
+    - Salida de 1 ¼”
+    - Incluye panel de control
+    - Diámetro de bomba: 4”
+
+---
+
+### Serie XRS
+- **Producto:** Bomba sumergible para pozo
+  - **Modelos:**
+    - 4XRSm3/7-0.75
+      - **Código:** 11145
+      - **Potencia:** 1HP
+      - **Altura Máxima:** 64 metros
+      - **Caudal Máximo:** 90 L/min
+  - **Características:**
+    - Cuerpo y eje de acero inoxidable
+    - Impulsor de acero inoxidable
+    - Inmersión Máxima: 80 m
+    - Protección anticalentamiento
+    - Salida de 1 ¼”
+    - Incluye panel de control
+    - Diámetro de bomba: 4”
+
+---
+
+### Serie 6XRS
+- **Producto:** Bomba sumergible para pozo
+  - **Modelos:**
+    - 6XRS17/8-7.5
+      - **Código:** 11008
+      - **Potencia:** 10HP
+      - **Altura Máxima:** 129 metros
+      - **Caudal Máximo:** 500 L/min
+  - **Características:**
+    - Cuerpo y eje de acero inoxidable
+    - Impulsor de acero inoxidable
+    - Inmersión Máxima: 100 m
+    - Protección anticalentamiento
+    - Salida de 3”
+    - Incluye panel de control
+    - Diámetro de bomba: 6”
+    - Monofásicas o trifásicas
+
+---
+
+### Motores y Paneles de Control
+- **Motores:**
+  - 0.5HP 110V (Código: 11105)
+  - 1.0HP 110V (Código: 10553)
+  - 1.0HP 220V (Código: 10554)
+  - 2.0HP 110V (Código: 10555)
+  - 2.0HP 220V (Código: 10956)
+  - 3.0HP 220V (Código: 10957)
+
+- **Paneles de Control:**
+  - Para motor sumergible 0.5HP 110V (Código: 10560)
+  - Para motor sumergible 0.5HP 220V (Código: 10560)
+  - Para motor sumergible 0.75HP 110V (Código: 10304)
+  - Para motor sumergible 1.0HP 110V (Código: 10562)
+  - Para motor sumergible 1.0HP 220V (Código: 10561)
+  - Para motor sumergible 2.0HP 110V (Código: 10563)
+  - Para motor sumergible 2.0HP 220V (Código: 10578)
+  - Para motor sumergible 3.0HP 220V (Código: 10579)
+
+---
+
+Esta estructura proporciona una visión clara y organizada de los productos, modelos y especificaciones contenidas en el fragmento del catálogo.
+
+--- Chunk 4 ---
+
+Aquí tienes la información estructurada y organizada por productos y sus características:
+
+---
+
+### Serie C1S1 - Protector de Motor
+
+- **Modelos y Códigos:**
+  - C1S1 110V: Código 10740
+  - C1S1 220V: Código 11053
+
+- **Especificaciones Principales:**
+  - Voltaje nominal de entrada: AC220V/60HZ Monofásico
+  - Potencia nominal de salida: 0.37KW a 2.2KW (0.5HP a 3HP)
+
+- **Funciones de Protección:**
+  - Protección de sobrecarga
+  - Protección de alto/bajo voltaje
+  - Protección de motor atascado
+  - Protección contra funcionamiento en seco sin sensor
+
+- **Principales Características:**
+  - Pantalla Hd LCD dinámica en inglés
+  - Visualización de los últimos cinco fallos de la bomba
+  - Visualización del tiempo de funcionamiento acumulativo de la bomba
+  - Botón de calibración
+  - Alarma de falla
+  - Protección clase IP54
+
+### Serie C1SP1 - Controlador Inteligente
+
+- **Modelo y Código:**
+  - C1SP1 220V: Código 11054
+
+- **Especificaciones Principales:**
+  - Voltaje nominal de entrada: AC220V/60HZ Monofásico
+  - Potencia nominal de salida: 0.37KW a 2.2KW (0.5HP a 3HP)
+
+- **Funciones de Protección:**
+  - Protección de sobrecarga
+  - Protección de alto/bajo voltaje
+  - Protección de motor atascado
+  - Protección contra funcionamiento en seco sin sensor
+
+- **Principales Características:**
+  - Sonda de electrodo de pulso / interruptor de flotador / manómetro de contacto eléctrico / interruptor de presión
+  - Pantalla Hd LCD dinámica en inglés
+  - Modo de control: Manual / automático
+  - Función de protección completa en estado manual / automático
+  - Visualización de los últimos cinco fallos de la bomba
+  - Visualización del tiempo de funcionamiento acumulativo de la bomba
+  - Protección contra la oxidación del eje de la bomba
+  - Botón de calibración
+  - Instrucciones de parpadeo cuando el enlace de la sonda se invierte
+  - Alarma de falla
+  - Llenado rápido de agua cuando se corta o vuelve la energía
+  - Botón indicador de calibración
+  - Alarma de desbordamiento de drenaje
+  - Distancia de transmisión del sensor de nivel ≤200m
+  - Protección clase IP22
+
+### Serie PB - Generadores con Motor de Gasolina
+
+- **Modelo y Código:**
+  - PB3300A 60HZ 6.0HP: Código 10783
+
+- **Especificaciones:**
+  - Potencia nominal: 3.0 KW
+  - Potencia Máx.: 3.3 KW
+
+### Serie LM51Z-2L - Cortadora de Grama
+
+- **Código:** 10463
+
+- **Especificaciones:**
+  - Motor de gasolina (regular)
+  - Aceite 10W30
+  - Cubierta de acero
+  - Ancho de corte: 51 cm
+  - Potencia: 5.5 HP
+  - Altura de corte: 30-80 mm (6 posiciones)
+  - Descarga lateral, trasera y triturada
+  - Bolsa de 70 litros de capacidad
+  - Autopropulsada
+  - Arranque manual
+  - Ruedas de 8” y 11”
+
+### Serie LRP - Presurizadores
+
+- **Modelos y Códigos:**
+  - LRP15-90A/160 110V: Código 10462
+  - LRP25-120A/180: Código 10964
+
+- **Especificaciones Comunes:**
+  - Funcionamiento automático o manual
+  - Soporta líquidos hasta 60ºC
+  - Voltaje: 110V/120V, 60 HZ
+
+- **Especificaciones del LRP15-90A/160:**
+  - Caudal MAX: 25 L/min
+  - Elevación MAX: 9 metros
+  - Entrada de ¾” y salida de ¾“
+
+- **Especificaciones del LRP25-120A/180:**
+  - Caudal MAX: 67 L/min
+  - Elevación MAX: 11.5 metros
+  - Entrada de ¾” y salida de ¾“
+
+### Serie KB7000E - Generador con Motor de Gasolina
+
+- **Código:** 10569
+
+- **Especificaciones:**
+  - Motor de gasolina 4 tiempos 13HP
+  - Aceite 10W30 y gasolina regular
+  - Tanque de combustible grande
+  - Medidor de frecuencia y horómetro digital
+  - Encendido eléctrico y manual
+  - Incluye herramientas de soporte
+  - Medidor de gasolina con flote
+  - Motor OHV enfriado por aire
+  - Grado de aislamiento F
+  - 4 tomas 110V, 1 toma de anclaje 220V
+  - Incluye 2 espigas 110V y una espiga de anclaje
+
+### Serie PS-04 - Switch Electromagnético
+
+- **Modelo y Código:**
+  - PS-04A: Código 10201
+
+- **Especificaciones:**
+  - Para bombas de hasta 1.5hp
+  - Voltaje: 110V, 60 HZ, 10A
+  - Presión Max.: 10 bar
+  - Entrada de 1” y salida de 1”
+  - Funciones: Detecta fugas, mantiene presión constante
+
+### Serie LVR1 60HZ - Bomba Vertical Multietapas
+
+- **Modelos y Códigos:**
+  - LVR1-13 220V 60HZ 1.5HP: Código 10610
+  - LVR1-17 220V 60HZ 2.0HP: Código 10611
+
+- **Especificaciones Comunes:**
+  - Para agua limpia o líquidos de poca viscosidad
+  - Voluta, eje e impulsor de acero inoxidable
+  - Protección Anticalentamiento
+  - Entrada de 1” y Salida de 1 ¼”
+
+- **Especificaciones del LVR1-13:**
+  - Alt. Max.: 118 metros (387 pies)
+  - Caudal Max.: 49 L/min (2.9 m³/h max)
+
+- **Especificaciones del LVR1-17:**
+  - Alt. Max.: 155 metros (509 pies)
+  - Caudal Max.: 49 L/min (2.9 m³/h max)
+
+### Serie LPW2500 - Lavadora a Presión
+
+- **Código:** 10987
+
+- **Especificaciones:**
+  - Máxima presión: 2500psi
+  - Máximo caudal: 7.5 L/min
+  - Motor: 6.5hp / 196cc OHV
+  - Combustible: gasolina (regular)
+  - 2900 rpm
+  - 4 boquillas diferentes
+  - Manguera de 8 metros
+  - Pistola y lanza de 20” incluidos
+  - Aceite 10W30
+  - Llantas de 8”
+  - Peso: 26.15 Kgs.
+
+### Serie XKF - Bomba para Fuentes
+
+- **Modelo y Código:**
+  - XKF-95P 95W 110V: Código 10987
+
+- **Especificaciones:**
+  - Alt. Max.: 3.0 metros (9.8 pies)
+  - Caudal Max.: 58 L/min (15.32 Gls/min)
+  - Cuerpo de plástico
+  - Incluye varias boquillas
+
+### Serie de Tanques de Presión
+
+- **Horizontales:**
   - 20 litros: Código 10903
   - 24 litros: Código 10188
+  - 36 litros: Código 10202
+  - 50 litros: Código 10189
+  - 100 litros: Código 10308
+
+- **Verticales:**
+  - 100 litros: Código 10567
+  - 150 litros: Código 10659
+  - 300 litros: Código 10660
+
+- **Membranas:**
+  - 24 litros: Código 10454
+  - 50 litros: Código 10455
+  - 100 litros: Código 10456
+  - 150 litros: Código 10764
+  - 300 litros: Código 10765
+  - Membrana de 50,000 ciclos
+
+### Otros Componentes
+
+- **Switch de presión:**
+  - PS-02C hembra: Código 10573
+
+- **Acople de 5 vías:**
+  - 5TA
+
+- **Manómetros:**
+  - Manómetro Radial 100psi: Código 10192
+  - Manómetro Axial 100psi: Código 10191
+
+- **Válvula de pie:**
+  - FVA1 1”: Código 10198
+
+- **Flote:**
+  - FLO-01 Flote con contrapeso 1.5 M. de cable: Código 10311
+  - Flote para QDX: Código 11023
 
 ---
 
-Esta estructura permite identificar rápidamente los productos, sus modelos, y las especificaciones técnicas relevantes.
+Esta estructura organiza la información de manera clara y lógica, agrupando los productos por serie y modelo, y detallando sus especificaciones y características.
 
 ---
 

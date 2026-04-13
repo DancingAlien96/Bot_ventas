@@ -77,6 +77,32 @@ async function extractTextFromPdf(pdfPath: string): Promise<string> {
 }
 
 /**
+ * Divide el texto en chunks más pequeños para evitar límites de tokens
+ */
+function splitTextIntoChunks(text: string, maxChunkSize: number = 10000): string[] {
+  const chunks: string[] = [];
+  let currentChunk = '';
+
+  // Dividir por párrafos primero
+  const paragraphs = text.split('\n\n');
+
+  for (const paragraph of paragraphs) {
+    if ((currentChunk + paragraph).length > maxChunkSize && currentChunk.length > 0) {
+      chunks.push(currentChunk.trim());
+      currentChunk = paragraph;
+    } else {
+      currentChunk += (currentChunk ? '\n\n' : '') + paragraph;
+    }
+  }
+
+  if (currentChunk.trim()) {
+    chunks.push(currentChunk.trim());
+  }
+
+  return chunks;
+}
+
+/**
  * Procesa un PDF completo
  */
 async function processPdf(pdfPath: string): Promise<void> {
@@ -93,40 +119,55 @@ async function processPdf(pdfPath: string): Promise<void> {
     // Paso 2: Procesar el texto con GPT-4o para estructurarlo
     console.log('\n🤖 Paso 2: Procesando y estructurando contenido con GPT-4o...');
     
-    const prompt = `
+    // Dividir el texto en chunks si es muy largo
+    const chunks = splitTextIntoChunks(pdfText);
+    console.log(`   Dividiendo en ${chunks.length} chunks para procesamiento...`);
+
+    let structuredKnowledge = '';
+
+    for (let i = 0; i < chunks.length; i++) {
+      const chunk = chunks[i];
+      console.log(`   Procesando chunk ${i + 1}/${chunks.length} (${chunk.length} caracteres)...`);
+      
+      const prompt = `
 Eres un experto en análisis de documentación técnica de productos de tratamiento de agua.
 
-A continuación te proporciono el texto completo extraído de un catálogo PDF de Aquaequipos.
+A continuación te proporciono parte del texto extraído de un catálogo PDF.
 El texto puede estar desordenado debido a la extracción automática.
 
 Tu tarea es:
-1. Analizar y estructurar toda la información
+1. Analizar y estructurar la información de este fragmento
 2. Identificar productos, modelos y especificaciones
 3. Organizar la información de forma clara y lógica
-4. Crear una base de conocimiento estructurada
+4. Crear una base de conocimiento estructurada para este fragmento
 
-El texto extraído es:
+El texto del fragmento ${i + 1}/${chunks.length} es:
 
-${pdfText}
+${chunk}
 
 Por favor, organiza esta información en formato estructurado, agrupando por productos y sus características.
 `;
 
-    console.log('   Enviando a GPT-4o para análisis (esto puede tomar 1-2 minutos)...');
-    
-    const response = await openai.chat.completions.create({
-      model: 'gpt-4o',
-      messages: [
-        {
-          role: 'user',
-          content: prompt,
-        },
-      ],
-      max_tokens: 16000,
-      temperature: 0.3,
-    });
+      const response = await openai.chat.completions.create({
+        model: 'gpt-4o',
+        messages: [
+          {
+            role: 'user',
+            content: prompt,
+          },
+        ],
+        max_tokens: 8000,
+        temperature: 0.3,
+      });
 
-    const structuredKnowledge = response.choices[0].message.content || 'No se pudo procesar el contenido.';
+      const chunkKnowledge = response.choices[0].message.content || `No se pudo procesar el chunk ${i + 1}.`;
+      structuredKnowledge += `\n\n--- Chunk ${i + 1} ---\n\n${chunkKnowledge}`;
+      
+      // Pequeña pausa para evitar rate limits
+      if (i < chunks.length - 1) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
+    }
 
     let fullKnowledge = `# Conocimiento Extraído de ${pdfName}\n\n`;
     fullKnowledge += `Fecha de procesamiento: ${new Date().toISOString()}\n\n`;

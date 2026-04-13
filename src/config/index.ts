@@ -22,6 +22,19 @@ export const config = {
     timezone: process.env.TIMEZONE || 'America/Guatemala',
     ownerId: parseInt(process.env.OWNER_TELEGRAM_ID || '0'),
   },
+  ycloud: {
+    apiKey: process.env.YCLOUD_API_KEY || '',
+    webhookSecret: process.env.YCLOUD_WEBHOOK_SECRET || '',
+    webhookId: process.env.YCLOUD_WEBHOOK_ID || '',
+    template: {
+      reopenConversation: process.env.YCLOUD_TEMPLATE_REOPEN || 'reopen_conversation',
+      language: process.env.YCLOUD_TEMPLATE_LANGUAGE || 'en'
+    }
+  },
+  server: {
+    port: parseInt(process.env.PORT || '3000', 10),
+  },
+  publicSite: process.env.PUBLIC_SITE || '',
   nodeEnv: process.env.NODE_ENV || 'development',
 };
 

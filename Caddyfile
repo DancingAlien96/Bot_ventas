@@ -1,0 +1,8 @@
+chatbot.productosdelagua.com {
+    encode zstd gzip
+    reverse_proxy bot:3000
+    log {
+        output stdout
+        format json
+    }
+}

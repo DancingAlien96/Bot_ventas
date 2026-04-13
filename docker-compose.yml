@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: aquaequipos-bot
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./knowledge:/app/knowledge
+    ports:
+      - "0.0.0.0:3000:3000"
+    restart: unless-stopped
+    # Puerto 3000 expuesto públicamente para nginx reverse proxy

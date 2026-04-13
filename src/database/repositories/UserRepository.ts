@@ -2,6 +2,10 @@ import { db } from '../index';
 import { User } from '../../types';
 
 export class UserRepository {
+  private static normalizePhone(phone: string): string {
+    return phone.replace(/\D/g, '');
+  }
+
   static findByTelegramId(telegramId: number): User | undefined {
     const row = db.prepare('SELECT * FROM users WHERE telegram_id = ?').get(telegramId) as any;
     return row ? this.mapRowToUser(row) : undefined;
@@ -14,6 +18,17 @@ export class UserRepository {
     `).run(telegramId, firstName, lastName, username);
 
     return this.findByTelegramId(telegramId)!;
+  }
+
+  static findOrCreateByPhone(phone: string, name?: string): User {
+    const normalized = this.normalizePhone(phone);
+    const numericId = parseInt(normalized, 10);
+    let user = this.findByTelegramId(numericId);
+    if (!user) {
+      user = this.create(numericId, name || 'Cliente', undefined, 'whatsapp');
+      this.updatePhone(numericId, phone);
+    }
+    return user;
   }
 
   static findOrCreate(telegramId: number, firstName: string, lastName?: string, username?: string): User {
@@ -30,6 +45,21 @@ export class UserRepository {
 
   static updatePhone(telegramId: number, phone: string): void {
     db.prepare('UPDATE users SET phone = ? WHERE telegram_id = ?').run(phone, telegramId);
+  }
+
+  static updateLastIncoming(telegramId: number, when: Date): void {
+    db.prepare('UPDATE users SET last_incoming_at = ? WHERE telegram_id = ?').run(when.toISOString(), telegramId);
+  }
+
+  static setLastIncomingByPhone(phone: string, when: Date): void {
+    const normalized = this.normalizePhone(phone);
+    const numericId = parseInt(normalized, 10);
+    db.prepare('UPDATE users SET last_incoming_at = ? WHERE telegram_id = ?').run(when.toISOString(), numericId);
+  }
+
+  static getLastIncoming(telegramId: number): Date | null {
+    const row = db.prepare('SELECT last_incoming_at FROM users WHERE telegram_id = ?').get(telegramId) as any;
+    return row && row.last_incoming_at ? new Date(row.last_incoming_at) : null;
   }
 
   static getAllLeads(): User[] {

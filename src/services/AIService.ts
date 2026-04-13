@@ -22,6 +22,34 @@ export class AIService {
   }
 
   /**
+   * Decidir si se necesita una pregunta clarificadora antes de recomendar
+   * Basado en si el usuario expresa intención de compra o términos técnicos suficientes.
+   */
+  private shouldAskClarifyingQuestion(userMessage: string): boolean {
+    if (!userMessage) return true;
+
+    const lower = userMessage.toLowerCase();
+
+    // Si el usuario muestra intención de compra o detalla la necesidad, no preguntar
+    const purchaseKeywords = ['comprar', 'precio', 'cotiz', 'quiero', 'necesito', 'interes', 'comprarlo', 'lo quiero'];
+    const contextKeywords = ['presión', 'caudal', 'regadera', 'pozo', 'hogar', 'industrial', 'agua turbia', 'filtr', 'suaviz', 'tanque', 'bomba', 'riego'];
+
+    for (const k of purchaseKeywords) {
+      if (lower.includes(k)) return false;
+    }
+
+    for (const k of contextKeywords) {
+      if (lower.includes(k)) return false;
+    }
+
+    // Si el mensaje es corto y no contiene keywords, pedir clarificación
+    if (lower.split(/\s+/).length < 6) return true;
+
+    // Por defecto, no pedir clarificación
+    return false;
+  }
+
+  /**
    * Cargar conocimiento extraído de los PDFs
    */
   private loadCatalogKnowledge(): void {
@@ -57,8 +85,9 @@ export class AIService {
 
   /**
    * Genera el prompt del sistema con el conocimiento del catálogo
+   * includeCatalog: si es false, omite adjuntar el texto del catálogo (útil para reintentos)
    */
-  private getSystemPrompt(): string {
+  private getSystemPrompt(includeCatalog: boolean = true): string {
     const now = new Date();
     const today = now.toLocaleDateString('es-GT', { 
       weekday: 'long', 
@@ -79,6 +108,8 @@ Tu trabajo es:
 6. Proporcionar información de productos, precios y disponibilidad
 7. Guiar a los clientes en el proceso de compra
 
+  **REGLA IMPORTANTE:** Cuando recomiendes un producto, OBLIGATORIAMENTE utiliza las funciones 'getProductDetails' o 'searchProducts' para obtener el 'permalink' (enlace de compra) y asegúrate de incluir ese enlace en la respuesta al cliente. No inventes URLs ni enlaces — usa los datos reales obtenidos de la tienda.
+
 🎯 ENFOQUE DE ASESORÍA:
 - Primero identifica el PROBLEMA o NECESIDAD real del cliente
 - Piensa en la SOLUCIÓN COMPLETA (no solo un producto aislado)
@@ -93,6 +124,7 @@ Tu trabajo es:
 🎯 DIRECTRICES DE CONVERSACIÓN:
 - Sé amable, profesional y conversacional
 - **MUY IMPORTANTE**: Haz UNA pregunta a la vez, NO bombardees al cliente con múltiples preguntas
+- **LINKS DE COMPRA**: Si vas a recomendar productos, llama a las funciones disponibles para recuperar enlaces ('permalink') y muestra el enlace concreto de compra junto al producto recomendado.
 - Avanza paso a paso en la conversación de forma natural
 - Primero entiende la necesidad general, luego profundiza con preguntas específicas
 - Usa un tono cercano y amigable, como un vendedor experto que asesora personalmente
@@ -100,6 +132,23 @@ Tu trabajo es:
 - Proporciona información técnica de forma clara y digerible
 - Si no estás seguro de algo, sé honesto y ofrece consultar con un experto
 - Intenta identificar si es un lead calificado (muestra interés real en comprar)
+
+🏷️ FORMATO OBLIGATORIO AL RECOMENDAR PRODUCTOS:
+Cuando presentes uno o varios productos SIEMPRE debes:
+1. Antes de listar, escribe una frase breve que conecte el producto con la necesidad del cliente (ej.: "Para lo que me describes, esto es lo que te recomendaría:")
+2. Por cada producto indica:
+   - Nombre y precio
+   - *Por qué* es adecuado para el caso del cliente (1-2 oraciones concretas)
+   - Link de compra
+3. Si hay dudas técnicas pendientes, indícalas DESPUÉS de la lista, no antes.
+
+Ejemplo de tono esperado:
+"Para un pozo de esa profundidad te recomiendo esta bomba sumergible porque soporta la columna de agua sin sobrecalentarse:
+*Bomba X 1.5HP* — Q1,200
+Específica para pozos de hasta 30m, motor resistente al trabajo continuo.
+🔗 Ver detalle y comprar: https://..."
+
+❌ Evita: listar productos sin contexto, sin precio o sin enlace.
 
 📝 ESTILO DE PREGUNTAS (ejemplos):
 ❌ MAL: "¿Para qué uso la necesitas? ¿Cuál es la altura? ¿Qué caudal requieres? ¿Cuántas personas?"
@@ -120,6 +169,13 @@ Tu trabajo es:
 - Cliente con agua turbia → Sistema de filtración multicapa + purificador UV
 - Cliente para riego → Bomba centrífuga + timer + válvulas de distribución
 
+🧠 EXPERIENCIA DE CAMPO (REGLAS TÉCNICAS):
+- Cuando el cliente pregunte por bomba sumergible para pozo, valida profundidad total y nivel dinámico antes de recomendar modelo.
+- Si el cliente menciona 5 metros o más de columna/altura de agua y riesgo de daño, reconoce la preocupación y explica que una mala selección/instalación puede sobrecargar o dañar la bomba.
+- No asegures compatibilidad sin datos mínimos: profundidad, caudal requerido, diámetro de pozo, voltaje y tipo de uso.
+- Para pozos profundos o dudas técnicas, prioriza recomendar bombas para pozo (sumergibles específicas) y ofrece asesoría técnica industrial.
+- Si faltan datos críticos, haz UNA pregunta técnica a la vez antes de cerrar una recomendación.
+
 📚 FUNCIONES DISPONIBLES:
 - searchProducts: Busca productos en la tienda WooCommerce
 - getProductDetails: Obtiene información detallada de un producto
@@ -127,13 +183,27 @@ Tu trabajo es:
 - getFeaturedProducts: Muestra productos destacados
 `;
 
-    // Agregar conocimiento del catálogo si existe
-    if (this.catalogKnowledge) {
+    // Agregar conocimiento del catálogo si existe y si está permitido
+    if (this.catalogKnowledge && includeCatalog) {
+      const MAX_CATALOG_CHARS = 15000;
+      let catalogToUse = this.catalogKnowledge;
+      if (this.catalogKnowledge.length > MAX_CATALOG_CHARS) {
+        catalogToUse = this.catalogKnowledge.slice(0, MAX_CATALOG_CHARS) + '\n\n[EL CONOCIMIENTO DEL CATÁLOGO HA SIDO TRUNCADO PARA EVITAR LÍMITES DE TOKENS]';
+      }
+
       systemPrompt += `\n\n📖 CONOCIMIENTO DEL CATÁLOGO:\n\n`;
-      systemPrompt += this.catalogKnowledge;
+      systemPrompt += catalogToUse;
       systemPrompt += `\n\n`;
       systemPrompt += `IMPORTANTE: Usa este conocimiento del catálogo para responder preguntas técnicas sobre productos, especificaciones, capacidades, y aplicaciones. Esta información es la fuente de verdad para detalles técnicos.`;
     }
+
+    // Agregar contactos de emergencia
+    systemPrompt += `\n\n🚨 CONTACTOS DE EMERGENCIA:\n\n`;
+    systemPrompt += `Si el cliente necesita información que no tienes disponible, o en casos especiales donde requiera asistencia inmediata, proporciona estos contactos directos:\n\n`;
+    systemPrompt += `- **LLAMADAS TELEFONICAS SALA DE VENTAS** (Enviar al tener dudas del equipo o solicitar links de pago): +502 77969957\n`;
+    systemPrompt += `- **ASESORIA TECNICA INDUSTRIAL** (Plantas de tratamiento y temas eléctricos): +502 40045414\n`;
+    systemPrompt += `- **ASESORIA DE PISCINAS** (Desde construcción hasta filtración): +502 31775181\n\n`;
+    systemPrompt += `Cuando proporciones estos contactos, explica brevemente por qué los recomiendas y anima al cliente a contactar para una atención personalizada.`;
 
     return systemPrompt;
   }
@@ -142,8 +212,8 @@ Tu trabajo es:
    * Chat principal con el usuario
    */
   async chat(userId: number, message: string): Promise<string> {
-    // Obtener historial de conversación
-    const history = ConversationRepository.findByUserId(userId, 10);
+    // Obtener historial de conversación (limitado a mensajes recientes para ahorrar tokens)
+    const history = ConversationRepository.findByUserId(userId, 6);
     
     // Guardar mensaje del usuario
     ConversationRepository.create(userId, 'user', message);
@@ -163,7 +233,7 @@ Tu trabajo es:
         model: 'gpt-4o',
         messages: messages as any,
         temperature: 0.7,
-        max_tokens: 1500,
+        max_tokens: 800,
         functions: this.getFunctions(),
         function_call: 'auto',
       });
@@ -175,10 +245,47 @@ Tu trabajo es:
         const functionName = assistantMessage.function_call.name;
         const functionArgs = JSON.parse(assistantMessage.function_call.arguments);
 
+        // Si no hay intención de compra clara en el mensaje del usuario,
+        // pedir una pregunta clarificadora antes de ejecutar búsquedas/recomendaciones.
+        if (['searchProducts', 'getFeaturedProducts', 'getProductDetails'].includes(functionName) && this.shouldAskClarifyingQuestion(message)) {
+          const clarifying = 'Antes de recomendar, ¿esto es para uso doméstico o industrial y cuál es el problema principal (ej.: baja presión, agua turbia, riego, etc.)?';
+          ConversationRepository.create(userId, 'assistant', clarifying);
+          return clarifying;
+        }
+
         // Ejecutar la función correspondiente
         const functionResult = await this.executeFunction(functionName, functionArgs);
 
-        // Llamar nuevamente a la IA con el resultado de la función
+        // Si la función corresponde a WooCommerce, formatear y devolver directamente
+        try {
+          if (functionName === 'getProductDetails' && functionResult?.success && functionResult.product) {
+            const formatted = wooCommerceService.formatProductInfo(functionResult.product);
+            ConversationRepository.create(userId, 'assistant', formatted);
+            return formatted;
+          }
+
+          if ((functionName === 'searchProducts' || functionName === 'getFeaturedProducts') && functionResult?.success) {
+            const products = functionResult.products || [];
+            if (products.length === 0) {
+              const msg = 'No encontré productos que coincidan con tu búsqueda. ¿Podrías darme más detalles sobre lo que necesitas?';
+              ConversationRepository.create(userId, 'assistant', msg);
+              return msg;
+            }
+            // No formateamos aquí directamente: dejamos que la IA redacte
+            // la respuesta con razonamiento y los datos de productos incluidos.
+            // El bloque siguiente (segunda llamada a la IA) se encarga de esto.
+          }
+
+          if (functionName === 'checkStock' && functionResult?.success) {
+            const msg = functionResult.message || (functionResult.inStock ? 'Producto disponible' : 'Producto agotado');
+            ConversationRepository.create(userId, 'assistant', msg);
+            return msg;
+          }
+        } catch (formatErr) {
+          console.error('Error formateando resultado de WooCommerce:', formatErr);
+        }
+
+        // Si no aplicó formateo directo, llamar nuevamente a la IA con el resultado de la función
         messages.push(assistantMessage as any);
         messages.push({
           role: 'function' as any,
@@ -190,7 +297,7 @@ Tu trabajo es:
           model: 'gpt-4o',
           messages: messages as any,
           temperature: 0.7,
-          max_tokens: 1500,
+          max_tokens: 800,
         });
 
         const finalMessage = finalResponse.choices[0].message.content || 'Lo siento, no pude procesar tu solicitud.';
@@ -203,8 +310,40 @@ Tu trabajo es:
       ConversationRepository.create(userId, 'assistant', reply);
       return reply;
 
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error en AIService:', error);
+
+      // Intento de reintento cuando el error es por límite de tokens (prompt demasiado grande)
+      const errMsg = error?.message || '';
+      const isTokenLimit = (error?.code === 'rate_limit_exceeded' || errMsg.includes('Request too large') || errMsg.includes('tokens per min'));
+
+      if (isTokenLimit) {
+        try {
+          console.log('AIService: token limit detected — reintentando con contexto reducido...');
+
+          // Mensajes mínimos: prompt sin catálogo y últimos 2 mensajes del historial
+          const recentHistory = history.slice(-2).map(h => ({ role: h.role as any, content: h.content }));
+          const minimalMessages: AIMessage[] = [
+            { role: 'system', content: this.getSystemPrompt(false) },
+            ...recentHistory,
+            { role: 'user', content: message },
+          ];
+
+          const retryResponse = await openai.chat.completions.create({
+            model: 'gpt-4o',
+            messages: minimalMessages as any,
+            temperature: 0.7,
+            max_tokens: 800,
+          });
+
+          const retryReply = retryResponse.choices[0].message.content || 'Lo siento, no pude procesar tu solicitud.';
+          ConversationRepository.create(userId, 'assistant', retryReply);
+          return retryReply;
+        } catch (retryErr) {
+          console.error('AIService retry failed:', retryErr);
+        }
+      }
+
       return 'Lo siento, hubo un error al procesar tu mensaje. Por favor intenta de nuevo.';
     }
   }
@@ -316,7 +455,8 @@ Tu trabajo es:
           price: p.price,
           sku: p.sku,
           inStock: p.stock_status === 'instock',
-          permalink: p.permalink,
+          permalink: p.permalink ? wooCommerceService.normalizePermalink(p.permalink) : p.permalink,
+          shortDescription: p.short_description ? p.short_description.replace(/<[^>]*>/g, '') : undefined,
         })),
       };
     } catch (error) {
@@ -327,7 +467,7 @@ Tu trabajo es:
   /**
    * Obtener detalles de un producto
    */
-  private async getProductDetails(productId: number): Promise<any> {
+      private async getProductDetails(productId: number): Promise<any> {
     try {
       const product = await wooCommerceService.getProduct(productId);
       
@@ -335,7 +475,7 @@ Tu trabajo es:
         return { success: false, error: 'Producto no encontrado' };
       }
 
-      return {
+          return {
         success: true,
         product: {
           id: product.id,
@@ -346,7 +486,7 @@ Tu trabajo es:
           shortDescription: product.short_description?.replace(/<[^>]*>/g, ''),
           inStock: product.stock_status === 'instock',
           stockQuantity: product.stock_quantity,
-          permalink: product.permalink,
+              permalink: product.permalink ? wooCommerceService.normalizePermalink(product.permalink) : product.permalink,
           images: product.images?.map((img: any) => img.src),
         },
       };
@@ -392,7 +532,8 @@ Tu trabajo es:
           price: p.price,
           sku: p.sku,
           inStock: p.stock_status === 'instock',
-          permalink: p.permalink,
+          permalink: p.permalink ? wooCommerceService.normalizePermalink(p.permalink) : p.permalink,
+          shortDescription: p.short_description ? p.short_description.replace(/<[^>]*>/g, '') : undefined,
         })),
       };
     } catch (error) {

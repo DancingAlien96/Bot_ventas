@@ -77,6 +77,18 @@ export function initDatabase() {
     CREATE INDEX IF NOT EXISTS idx_product_inquiries_user_id ON product_inquiries(user_id);
   `);
 
+  // Añadir columna last_incoming_at a users si no existe (migración simple)
+  try {
+    const cols = db.prepare("PRAGMA table_info(users);").all();
+    const hasLast = cols.some((c: any) => c.name === 'last_incoming_at');
+    if (!hasLast) {
+      db.exec(`ALTER TABLE users ADD COLUMN last_incoming_at DATETIME`);
+      console.log('🔧 Columna last_incoming_at añadida a users');
+    }
+  } catch (err) {
+    console.warn('No se pudo añadir columna last_incoming_at (posible migración existente):', err);
+  }
+
   console.log('✅ Base de datos inicializada correctamente');
 }
 

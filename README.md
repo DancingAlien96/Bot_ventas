@@ -92,4 +92,43 @@ aquaequipos-bot/
 
 ---
 
+## 🐳 Docker (contenedorización)
+
+> **Nota:** Por defecto el bot usa *long polling* de Telegram y **no** expone puertos. No publicar puertos innecesarios a menos que vayas a usar webhooks.
+
+### Archivos añadidos
+- `Dockerfile` - Build multi-stage (compila TypeScript y ejecuta `dist/bot.js`).
+- `docker-compose.yml` - Servicio `bot` con `env_file` y volumen `./data:/app/data` para la base de datos.
+- `.dockerignore` - Ignora `node_modules`, `dist`, `.env`, etc.
+
+### Uso
+1. Construir y levantar (modo producción):
+
+```bash
+docker-compose up -d --build
+```
+
+2. Ver logs:
+
+```bash
+docker-compose logs -f
+```
+
+3. Inicializar la base de datos (ejecuta el script compilado en `dist`):
+
+```bash
+docker-compose run --rm bot node dist/scripts/initDb.js
+```
+
+4. Si necesitas exponer un puerto (por ejemplo, para webhooks), **edita** `docker-compose.yml` y agrega:
+
+```yaml
+ports:
+  - "<PUERTO_HOST>:<PUERTO_CONTENEDOR>"
+```
+
+> ⚠️ Ten cuidado al exponer puertos: el proyecto no necesita puertos abiertos para funcionar como bot por defecto.
+
+---
+
 **Desarrollado para Aquaequipos** 💧
