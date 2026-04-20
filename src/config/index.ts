@@ -16,6 +16,10 @@ export const config = {
   },
   database: {
     path: process.env.DATABASE_PATH || './data/bot.db',
+    type: process.env.DATABASE_TYPE || 'sqlite',
+  },
+  mongodb: {
+    uri: process.env.MONGODB_URI || process.env.MONGO_URI || '',
   },
   business: {
     name: process.env.BUSINESS_NAME || 'Aquaequipos',
@@ -44,10 +48,6 @@ const isInitScript = process.argv.some(arg =>
 );
 
 if (!isInitScript) {
-  if (!config.telegram.botToken) {
-    throw new Error('TELEGRAM_BOT_TOKEN es requerido en .env');
-  }
-
   if (!config.openai.apiKey) {
     throw new Error('OPENAI_API_KEY es requerido en .env');
   }

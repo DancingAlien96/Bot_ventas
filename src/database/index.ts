@@ -2,21 +2,34 @@ import Database from 'better-sqlite3';
 import { config } from '../config';
 import * as fs from 'fs';
 import * as path from 'path';
+import { connectMongo, closeMongo } from './mongo';
 
-// Crear directorio de datos si no existe
-const dataDir = path.dirname(config.database.path);
-if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir, { recursive: true });
+let _db: any = null;
+if (config.database.type !== 'mongo') {
+  // Crear directorio de datos si no existe
+  const dataDir = path.dirname(config.database.path);
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+
+  _db = new Database(config.database.path);
+  // Habilitar claves foráneas
+  _db.pragma('foreign_keys = ON');
 }
 
-export const db = new Database(config.database.path);
-
-// Habilitar claves foráneas
-db.pragma('foreign_keys = ON');
+export const db = _db;
 
 // Inicializar esquema de base de datos
-export function initDatabase() {
+export async function initDatabase() {
+  if (config.database.type === 'mongo') {
+    await connectMongo();
+    return;
+  }
+
+  // SQLite initialization follows
+
   // Tabla de usuarios
+  // (continued below)
   db.exec(`
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -93,7 +106,12 @@ export function initDatabase() {
 }
 
 // Función para cerrar la base de datos
-export function closeDatabase() {
+export async function closeDatabase() {
+  if (config.database.type === 'mongo') {
+    await closeMongo();
+    return;
+  }
+
   db.close();
   console.log('Base de datos cerrada');
 }

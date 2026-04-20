@@ -221,7 +221,7 @@ Específica para pozos de hasta 30m, motor resistente al trabajo continuo.
     // Preparar mensajes para OpenAI
     const messages: AIMessage[] = [
       { role: 'system', content: this.getSystemPrompt() },
-      ...history.map(h => ({
+      ... (await history).map(h => ({
         role: h.role as 'user' | 'assistant' | 'system',
         content: h.content,
       })),
@@ -322,7 +322,7 @@ Específica para pozos de hasta 30m, motor resistente al trabajo continuo.
           console.log('AIService: token limit detected — reintentando con contexto reducido...');
 
           // Mensajes mínimos: prompt sin catálogo y últimos 2 mensajes del historial
-          const recentHistory = history.slice(-2).map(h => ({ role: h.role as any, content: h.content }));
+          const recentHistory = (await history).slice(-2).map(h => ({ role: (h as any).role as any, content: (h as any).content }));
           const minimalMessages: AIMessage[] = [
             { role: 'system', content: this.getSystemPrompt(false) },
             ...recentHistory,

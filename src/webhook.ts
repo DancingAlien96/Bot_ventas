@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import crypto from 'crypto';
 import { config } from './config';
+import { initDatabase } from './database';
 import { aiService } from './services/AIService';
 import { ycloudService } from './services/YCloudService';
 import { UserRepository } from './database/repositories/UserRepository';
@@ -103,13 +104,13 @@ app.post('/webhook/ycloud', express.raw({ type: 'application/json' }), async (re
 
   try {
     // Find or create user by phone
-    const user = UserRepository.findOrCreateByPhone(from, name || 'Cliente');
+    const user = await UserRepository.findOrCreateByPhone(from, name || 'Cliente');
 
     // Log inbound for debugging
     console.log('Webhook inbound:', { from, to: inbound?.to, text });
 
     // An inbound WhatsApp message opens the 24h customer service window.
-    UserRepository.setLastIncomingByPhone(from, new Date());
+    await UserRepository.setLastIncomingByPhone(from, new Date());
 
     // Get AI response
     const reply = await aiService.chat(user.id, text);
@@ -130,6 +131,9 @@ app.get('/health', (_req: Request, res: Response) => {
   res.json({ status: 'ok', service: 'ycloud-webhook' });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Webhook YCloud escuchando en puerto ${PORT}`);
-});
+(async () => {
+  await initDatabase();
+  app.listen(PORT, () => {
+    console.log(`🚀 Webhook YCloud escuchando en puerto ${PORT}`);
+  });
+})();
